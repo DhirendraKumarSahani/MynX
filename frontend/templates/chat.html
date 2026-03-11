@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- ============================= -->
+<!-- BASIC META -->
+<!-- ============================= -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MynX AI</title>
+
+<!-- ============================= -->
+<!-- MAIN CSS -->
+<!-- ============================= -->
+<link rel="icon" type="image/png" href="/static/images/MynX_Logo.png">
+<link rel="stylesheet" href="/static/css/style.css">
+
+
+<!-- ============================= -->
+<!-- KaTeX (Math Rendering) -->
+<!-- ============================= -->
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+
+<!-- ============================= -->
+<!-- Google Font -->
+<!-- ============================= -->
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+
+<!-- ============================= -->
+<!-- Code Highlighting -->
+<!-- ============================= -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+
+</head>
+
+
+<body>
+
+<!-- ============================= -->
+<!-- MAIN APP CONTAINER -->
+<!-- ============================= -->
+
+<div class="app">
+
+
+<!-- ============================= -->
+<!-- HERO SECTION -->
+<!-- ============================= -->
+
+<div class="hero">
+
+<!-- MynX AI Logo -->
+<div class="logo-container">
+
+<img src="/static/images/MynX_Logo.png" alt="MynX AI Logo" class="logo-img">
+
+</div>
+
+
+<h1 class="title">
+MynX <span>- AI Assistant</span>
+</h1>
+
+<p class="subtitle">
+⚡ Designed for speed, intelligence creativity and Web Search
+</p>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- CHAT AREA -->
+<!-- Messages appear here -->
+<!-- ============================= -->
+
+<div class="chat-container">
+
+<div id="chat-messages">
+
+<!--
+Example structure created by chat.js
+
+User Message Example:
+
+<div class="user-msg">
+
+<span class="msg-text">Hello AI</span>
+
+<div class="message-actions">
+<button class="copy-btn">Copy</button>
+<button class="edit-btn">Edit</button>
+</div>
+
+</div>
+
+
+AI Message Example:
+
+<div class="ai-msg">
+
+<div class="message-actions">
+<button class="copy-btn">Copy</button>
+</div>
+
+AI response text here...
+
+</div>
+
+-->
+
+</div>
+
+
+
+<!-- ============================= -->
+<!-- INPUT SECTION -->
+<!-- ============================= -->
+
+<div class="input-wrapper">
+
+<input
+id="user-input"
+placeholder="Ask MynX anything..."
+autocomplete="off"
+>
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ============================= -->
+<!-- MARKDOWN RENDERING -->
+<!-- ============================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+<!-- ============================= -->
+<!-- MAIN CHAT SCRIPT -->
+<!-- Handles:
+Streaming
+Copy button
+Edit button
+Code highlight
+Math rendering
+-->
+<!-- ============================= -->
+
+<script src="/static/js/chat.js"></script>
+
+
+</body>
+</html>
