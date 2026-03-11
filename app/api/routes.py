@@ -7,6 +7,7 @@ from app.models.llm_model import LLMService
 from fastapi.responses import StreamingResponse
 from langchain_core.messages import HumanMessage
 from langchain_core.messages.utils import trim_messages
+from langchain_core.messages.utils import count_tokens_approximately
 import json
 
 router = APIRouter(prefix="/api/v1", tags=["AI Agent"])
@@ -84,7 +85,7 @@ def chat_stream(request: ChatRequest):
                 messages,
                 max_tokens=1500,
                 strategy="last",
-                token_counter=len
+                token_counter=count_tokens_approximately
             )
 
             sent_text = ""

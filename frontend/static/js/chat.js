@@ -123,6 +123,8 @@ fullText = fullText.replace(/(\d+)\.\n/g,"$1. ")
 
 content.innerHTML = marked.parse(fullText) + '<span class="typing-cursor"></span>'
 
+renderMathInElement(content)
+
 /* ADD COPY BUTTONS TO CODE */
 
 addCodeCopyButtons()
