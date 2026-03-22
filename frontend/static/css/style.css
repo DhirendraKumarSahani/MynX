@@ -146,8 +146,6 @@ display:flex;
 flex-direction:column;
 gap:20px;
 
-padding:20px 40px;
-
 max-height:80vh;
 overflow-y:auto;
 
@@ -505,4 +503,11 @@ animation:cursorBlink 1s infinite;
 50%{opacity:0}
 100%{opacity:1}
 
+}
+
+
+@media (max-width: 600px) {
+    #chat-messages {
+        font-size: 13px;
+    }
 }
