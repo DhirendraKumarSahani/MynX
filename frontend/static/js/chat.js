@@ -213,7 +213,8 @@ e.target.innerText = "Copy"
 
 })
 
-
+console.log("RAW CHUNK:", chunk)
+console.log("PARSED:", parsed)
 
 /* ======================================
 CODE BLOCK COPY BUTTON
