@@ -4,12 +4,21 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from app.core.config import settings
 
 
-embedding = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2",
-)
+_embedding = None
+
+def get_embedding():
+    global _embedding
+
+    if _embedding is None:
+        _embedding = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/paraphrase-MiniLM-L3-v2"
+        )
+
+    return _embedding
 
 def create_vector_store(docs):
-    return FAISS.from_documents(docs, embedding)
+
+    return FAISS.from_documents(docs, get_embedding())
 
 def load_vector_store(path=None):
 
@@ -18,6 +27,6 @@ def load_vector_store(path=None):
 
     return FAISS.load_local(
         path,
-        embedding,
+        get_embedding(),
         allow_dangerous_deserialization=True
     )

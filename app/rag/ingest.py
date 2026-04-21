@@ -4,7 +4,7 @@ from langchain_community.document_loaders import (
     PyPDFLoader,
     UnstructuredWordDocumentLoader
 )
-from app.rag.vector_store import create_vector_store
+from app.rag.vector_store import create_vector_store, load_vector_store
 import os
 
 
@@ -39,16 +39,22 @@ def ingest_documents(folder_path="data"):
         all_docs.extend(docs)
 
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=400,
-        chunk_overlap=80
+        chunk_size=300,
+        chunk_overlap=50
     )
 
     split_docs = splitter.split_documents(all_docs)
 
-    db = create_vector_store(split_docs)
+    # 🔥 MERGE WITH EXISTING DB
+    try:
+        db = load_vector_store()
+        db.add_documents(split_docs)
+    except:
+        db = create_vector_store(split_docs)
+
     db.save_local("faiss_index")
 
-    print("✅ All documents indexed successfully")
+    print("✅ Documents indexed successfully")
 
 # ✅ THIS MUST BE OUTSIDE FUNCTION
 if __name__ == "__main__":
