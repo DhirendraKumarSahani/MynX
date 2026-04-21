@@ -5,6 +5,9 @@ from app.api.routes import router
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
+
 app = FastAPI(
     title="Production AI Agent System",
     version="1.0.0",
